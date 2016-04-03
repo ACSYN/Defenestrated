@@ -22,7 +22,7 @@ turret = "Resources/Sprites/GreenTankTurret.png"
 #This creates a new tank object.
 #The first 2 arguements specify the base and turret sprites so you can mix and match tanks and turrets.
 #The third arguement specifies the starting position of the tank, and the forth, the starting size.
-tank = Tank(base,turret,(200,200),(75,110),(0,-20),(0,20)) #WHY IS THE SECOND VALUE (0,20)!?!?
+tank = Tank(base,turret,(200,200),(15,22),(0,-4),(0,2.5))
 
 #This function handles the directional weight of the arrow keys.
 #This function moves the tank and rotates the chasis accordingly.
@@ -52,7 +52,7 @@ def handleDirectional(d):
 #It uses pygame to find the current mouse position and points the turret there.
 def updateAim():
     tx,ty = pygame.mouse.get_pos()
-    x,y = tank.getPos()
+    x,y = tank.getTurretPos()
     tank.setRot(-math.degrees(math.atan2(ty-y,tx-x))-90)
 
 #This is the main game loop
