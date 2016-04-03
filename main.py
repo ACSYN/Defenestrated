@@ -8,33 +8,44 @@ import time
 import math
 import sys
 
+#TODO:
+#  * Make the Tank class more general and allow the user to set the relative offsets
+#of the base and the turret from the center of the sprite.
+
 #initWindow starts pygame, opens a window, and returns a drawing surface.
 screen = initWindow("Tactix Engine Test",(1000,700))
 #This number controls the speed at which the tank moves.
 speed = 1/6
+#Define filepaths for src images
+base = "Resources/Sprites/GenericTankBase.png"
+turret = "Resources/Sprites/GreenTankTurret.png"
 #This creates a new tank object.
 #The first 2 arguements specify the base and turret sprites so you can mix and match tanks and turrets.
 #The third arguement specifies the starting position of the tank, and the forth, the starting size.
-tank = Tank("Resources/Sprites/GreenTankBase.png","Resources/Sprites/GreenTankTurret.png",(200,200),(100,100))
+tank = Tank(base,turret,(200,200),(75,110),(0,-20),(0,20)) #WHY IS THE SECOND VALUE (0,20)!?!?
 
 #This function handles the directional weight of the arrow keys.
 #This function moves the tank and rotates the chasis accordingly.
 def handleDirectional(d):
     if d[0] == 1:
         tank.setPos((tank.getPos()[0]+speed,tank.getPos()[1]))
-        tank.setDir(90)
+        tank.setDir(270)
     if d[0] == -1:
         tank.setPos((tank.getPos()[0]-speed,tank.getPos()[1]))
         tank.setDir(90)
     if d[1] == 1:
         tank.setPos((tank.getPos()[0],tank.getPos()[1]+speed))
-        tank.setDir(0)
+        tank.setDir(180)
     if d[1] == -1:
         tank.setPos((tank.getPos()[0],tank.getPos()[1]-speed))
         tank.setDir(0)
-    if d == [1,1] or d == [-1,-1]:
+    if d == [1,1]:
+        tank.setDir(225)
+    if d == [-1,-1]:
         tank.setDir(45)
-    if d == [1,-1] or d == [-1,1]:
+    if d == [1,-1]:
+        tank.setDir(315)
+    if d == [-1,1]:
         tank.setDir(135)
 
 #This function calculates the angle at which to rotate the turret.
