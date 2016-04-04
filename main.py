@@ -15,14 +15,16 @@ import sys
 #initWindow starts pygame, opens a window, and returns a drawing surface.
 screen = initWindow("Tactix Engine Test",(1000,700))
 #This number controls the speed at which the tank moves.
-speed = 1/6
+speed = 1/3
 #Define filepaths for src images
-base = "Resources/Sprites/GenericTankBase.png"
-turret = "Resources/Sprites/GreenTankTurret.png"
+baseFP = "Resources/Sprites/GenericTankBase.png"
+turretFP = "Resources/Sprites/GreenTankTurret.png"
+projectileFP = "Resources/Sprites/ArtilleryShell.png"
+impactFP = "Resources/Sprites/Explosion.png"
 #This creates a new tank object.
 #The first 2 arguements specify the base and turret sprites so you can mix and match tanks and turrets.
 #The third arguement specifies the starting position of the tank, and the forth, the starting size.
-tank = Tank(base,turret,(200,200),(15,22),(0,-4),(0,2.5))
+tank = Tank(baseFP,turretFP,projectileFP,impactFP,(200,200),4,(0,-3.5),(0,2.5))
 
 #This function handles the directional weight of the arrow keys.
 #This function moves the tank and rotates the chasis accordingly.
@@ -64,8 +66,10 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == MOUSEBUTTONUP:
+            tank.fire(pygame.mouse.get_pos())
     handleDirectional(arrowWeight())
     updateAim()
-    screen.fill((255,255,255))
+    screen.fill((0,0,0))
     tank.draw(screen)
     pygame.display.flip()
