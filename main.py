@@ -8,17 +8,13 @@ import time
 import math
 import sys
 
-#TODO:
-#  * Make the Tank class more general and allow the user to set the relative offsets
-#of the base and the turret from the center of the sprite.
-
 #initWindow starts pygame, opens a window, and returns a drawing surface.
 screen = initWindow("Tactix Engine Test",(1000,700))
 #This number controls the speed at which the tank moves.
 speed = 1/3
 #Define filepaths for src images
 baseFP = "Resources/Sprites/GenericTankBase.png"
-turretFP = "Resources/Sprites/GreenTankTurret.png"
+turretFP = "Resources/Sprites/RedTankTurret.png"
 projectileFP = "Resources/Sprites/ArtilleryShell.png"
 impactFP = "Resources/Sprites/Explosion.png"
 #This creates a new tank object.
@@ -70,6 +66,6 @@ while True:
             tank.fire(pygame.mouse.get_pos())
     handleDirectional(arrowWeight())
     updateAim()
-    screen.fill((0,0,0))
+    screen.fill((25,75,10))
     tank.draw(screen)
     pygame.display.flip()
