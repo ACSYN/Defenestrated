@@ -1,0 +1,44 @@
+Overall Ranks:
+  Ensign - 1 ship, maximum crew rank: Ensign
+  2nd Lieutenant - 1 ship, maximum crew rank: Ensign
+  1st Lieutenant - 1 ship, maximum crew rank: Ensign
+  Lieutenant Commander - 1 ship, maximum crew rank: 1st Lieutenant
+  Commander - 1 ship, maximum crew rank: Lieutenant Commander
+  Captain - 1 ship, maximum crew rank: Commander
+  Commodore - 3 ships, 1 flotilla, maximum crew rank: Captain
+  Rear Admiral Lower - 6 ships, 2 flotilla, maximum crew rank: Commodore
+  Rear Admiral Upper - 18 ships, 6 flotilla, maximum crew rank: Commodore
+  Vice Admiral - 36 ships, 12 flotilla, maximum crew rank: Commodore
+  Admiral - 72 ships, 24 flotilla, maximum crew rank: Commodore
+  Admiral of the Fleet - (multiplayer only) this position is determined by post Admiral exp and gives the holder authority over all admirals, commodores, and captains on the team
+
+Ship Crew Positions:
+  Command - determines the maximum rank of other crew members and makes assignments
+  Tactical - suggests special maneuvers based on ship ability
+  Helmsman - pilots the ship towards an assigned coordinate
+  Navigation - calculates trajectory for orbital insertion and escape
+  Weapons - aims and fires weapons at assigned target
+
+Research Positions:
+  Weapons Engineer - upgrades weapons
+  Propulsion Engineer - upgrades propulsion
+  Structural Engineer - upgrades hulls
+  Armor Engineer - upgrades armor
+  Offense Specialist - combines research from weapons and propulsion and unlocks new weapons
+  Construction Specialist - combines research from structural and propulsion and unlocks new hulls
+  Defense Specialist - combines research from weapons and structural and unlocks new armor
+
+Chain of Command:
+
+Admiral of the Fleet
+  Admiral
+    Admiral (Vice)
+      Admiral (Rear Upper)
+        Admiral (Rear Lower)
+          Commodore
+            Captain
+              Commander
+                Lieutenant Commander
+                  1st Lieutenant
+                    2nd Lieutenant
+                      Ensign
