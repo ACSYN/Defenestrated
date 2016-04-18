@@ -2,3 +2,9 @@ Ship Classes:
   Destroyer - small hull, fast speed
   Cruiser - medium hull, "normal" speed
   Battleship - large hull, slow speed
+  
+Modules:
+  Weapons:
+    Kinetics
+    Lasers
+    Missiles
